@@ -8,7 +8,9 @@ dotenv.config();
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*",
+}));
 app.use(express.json());
 
 // 🔗 MongoDB Connection
@@ -87,4 +89,8 @@ app.get("/stats/:shortId", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Server error" });
   }
+});
+
+app.get("/test", (req, res) => {
+  res.send("Backend working ✅");
 });
