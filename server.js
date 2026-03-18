@@ -37,7 +37,7 @@ app.post("/shorten", async (req, res) => {
     await newUrl.save();
 
     res.json({
-      shortUrl: `http://localhost:5000/${shortId}`,
+      shortUrl: `https://snipurl-backend.onrender.com/${shortId}`,
     });
 
   } catch (err) {
